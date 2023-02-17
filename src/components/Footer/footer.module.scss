@@ -1,0 +1,25 @@
+footer {
+  background-color: #000000;
+  min-height: 200px;
+  height: 100%;
+  margin-top: 35px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.footerContainer {
+  display: flex;
+  flex-direction: column;
+  height: 150px;
+  padding: 25px 0;
+
+  & > img {
+    display: block;
+    margin: auto;
+  }
+
+  & > span {
+    color: #ffffff;
+    text-align: center;
+  }
+}

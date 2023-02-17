@@ -1,0 +1,97 @@
+@use "../../assets/styles/mixins" as mixin;
+
+.container {
+  @include mixin.md-all {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.containerLocation {
+  min-width: 0;
+  @include mixin.md-all {
+    min-width: 700px;
+  }
+}
+
+.titleLocation {
+  font-size: 18px;
+  width: 100%;
+  @include mixin.md-all {
+    font-size: 36px;
+  }
+}
+
+.location {
+  font-size: 14px;
+  @include mixin.md-all {
+    font-size: 18px;
+  }
+}
+
+.badge {
+  min-width: 84px;
+  min-height: 18px;
+  padding: 5px 10px 5px 10px;
+  text-align: center;
+  font-size: 10px;
+  @include mixin.md-all {
+    font-size: 14px;
+    max-height: 30px;
+    padding: 10px 20px 10px 20px;
+  }
+}
+
+.hostName {
+  text-align: right;
+  width: 63px;
+  font-size: 12px;
+  @include mixin.md-all {
+    width: 100%;
+    text-align: left;
+    font-size: 18px;
+  }
+}
+
+.hostPicture {
+  width: 32px;
+  height: 32px;
+  margin-left: auto;
+  border-radius: 50%;
+  @include mixin.md-all {
+    width: 64px;
+    height: 64px;
+  }
+}
+
+.ratingHost {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  @include mixin.md-all {
+    margin-top: 10px;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    & > div {
+      margin-top: 10px;
+    }
+  }
+}
+
+.collapse {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  @include mixin.md-all {
+    flex-direction: row;
+
+    column-gap: 20px;
+  }
+}

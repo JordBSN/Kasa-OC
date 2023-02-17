@@ -1,0 +1,46 @@
+@use '../../../assets/styles/mixins' as mixin;
+
+.card {
+  position: relative;
+}
+
+.image {
+  filter: brightness(60%);
+  max-height: 255px;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  @include mixin.sm {
+    max-height: 255px;
+    min-width: 340px;
+  }
+  @include mixin.md {
+    min-height: 340px;
+    min-width: 340px;
+  }
+  @include mixin.lg {
+    min-height: 340px;
+    min-width: 340px;
+  }
+
+}
+
+.title {
+  display: inline-flex;
+  position: absolute;
+  padding-inline-end: 40px;
+  left: 20px;
+  bottom: 40px;
+  font-size: 18px;
+  @include mixin.sm {
+    font-size: 22px;
+  }
+  @include mixin.md {
+    font-size: 24px;
+  }
+  @include mixin.lg {
+    font-size: 26px;
+  }
+
+
+}

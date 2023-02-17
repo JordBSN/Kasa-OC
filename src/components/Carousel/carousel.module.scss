@@ -1,0 +1,46 @@
+@use "../../assets/styles/mixins" as mixin;
+
+.carousel {
+  display: block;
+  margin: auto auto 30px auto;
+  position: relative;
+  width: 100%;
+  @include mixin.lg {
+    max-width: 1200px;
+  }
+}
+
+.arrow {
+  background-color: transparent;
+  z-index: 1;
+  border: 0;
+  position: absolute;
+  top: 50%;
+  min-width: 30px;
+  min-height: 30px;
+  @include mixin.sm-all {
+    min-width: 50px;
+    min-height: 50px;
+  }
+  &_icon {
+    width: 100%;
+    height: 100%;
+  }
+  &_left {
+    left: 10px;
+  }
+  &_right {
+    right: 10px;
+  }
+}
+.carouselImage {
+  position: relative;
+  object-fit: cover;
+  width: 100%;
+  height: 255px;
+
+  @include mixin.sm-all {
+    height: 415px;
+  }
+
+}

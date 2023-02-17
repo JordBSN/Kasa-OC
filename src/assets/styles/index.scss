@@ -1,0 +1,23 @@
+@use "./variables";
+@use "./base";
+@use "./flex";
+@use "./utils";
+@use "./debug";
+@use "./themes";
+@use "./fontSizes";
+@use "./fontWeight";
+@use "./border";
+@use "./mixins";
+
+body, html {
+  font-family: "Montserrat", "serif";
+  background-color: #FFFFFF;
+
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: local("Montserrat"), url("../fonts/Montserrat-VariableFont_wght.ttf");
+}
+
+

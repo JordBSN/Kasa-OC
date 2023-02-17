@@ -1,0 +1,11 @@
+@use '../../assets/styles/mixins' as mixin;
+
+.collapse {
+  @include mixin.md-all{
+
+  }
+}
+
+.title {
+  height: 29px;
+}

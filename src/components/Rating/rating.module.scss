@@ -1,0 +1,11 @@
+@use '../../assets/styles/mixins' as mixin;
+
+.star {
+  width: 15px;
+  height: 15px;
+  @include mixin.md-all {
+    width: 30px;
+    height: 30px;
+  }
+
+}
