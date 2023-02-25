@@ -18,7 +18,7 @@ export default function Carousel(props) {
   function buttonLeft() {
     if (pictures?.length > 1) {
       return (
-        <button className={`${styles.arrow} ${styles.arrow_left}`} onClick={handleClickPrevious}>
+        <button className={`${styles.arrow} ${styles.arrow_left} cursor-pointer`} onClick={handleClickPrevious}>
           <img src={arrowLeft} className={`${styles.arrow_icon}`} alt="" />
         </button>
       );
@@ -27,11 +27,15 @@ export default function Carousel(props) {
   function buttonRight() {
     if (pictures?.length > 1) {
       return (
-        <button className={`${styles.arrow} ${styles.arrow_right}`} onClick={handleClickNext}>
+        <button className={`${styles.arrow} ${styles.arrow_right} cursor-pointer`} onClick={handleClickNext}>
           <img src={arrowRight} className={`${styles.arrow_icon}`} alt="" />
         </button>
       );
     }
+  }
+
+  function handleChildClickSetCurrent(index) {
+    setCurrent(index);
   }
 
   return (
@@ -45,7 +49,7 @@ export default function Carousel(props) {
               <div key={index}>
                 <img className={`${styles.carouselImage} border-radius-10`} src={picture} />
                 <div className={`d-flex flex-row justify-content-center mt-5`}>
-                  {pictures.length > 1 && pictures.map((picture, index) => <BulletPoint key={index} index={index} current={current} />)}
+                  {pictures.length > 1 && pictures.map((picture, index) => <BulletPoint onClick={handleChildClickSetCurrent}  key={index} index={index} current={current} />)}
                 </div>
               </div>
             )
