@@ -23,12 +23,5 @@
   @include mixin.lg {
     grid-template-columns: 1fr 1fr 1fr;
   }
-  @include mixin.xl {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
 }
 
-.card:hover {
-transform: translateY(-5px);
-  transition: all 0.1s ease-in-out;
-}

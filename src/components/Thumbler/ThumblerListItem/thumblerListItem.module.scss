@@ -24,6 +24,13 @@
   }
 }
 
+.image:hover {
+  transform: translateY(-3px);
+  filter: brightness(80%);
+  box-shadow: 5px 15px 15px var(--gray-2);
+  transition: all 0.3s ease-in-out;
+}
+
 .title {
   display: inline-flex;
   position: absolute;
@@ -31,9 +38,6 @@
   left: 20px;
   bottom: 40px;
   font-size: 18px;
-  & :hover {
-    display: none;
-  }
   @include mixin.sm {
     font-size: 22px;
   }
@@ -44,3 +48,5 @@
     font-size: 26px;
   }
 }
+
+
