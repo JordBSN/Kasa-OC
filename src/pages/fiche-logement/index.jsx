@@ -18,7 +18,7 @@ export default function Index() {
       });
     };
     getData();
-  }, []);
+  }, [params]);
 
   useEffect(() => {
     if (location === undefined) {
@@ -29,7 +29,7 @@ export default function Index() {
   if (location) {
     return (
       <div className={`mt-20 d-flex flex-column justify-content-center px-20`}>
-        <Carousel key={location.id} pictures={location.pictures} />
+        <Carousel pictures={location.pictures} />
 
         <div className={`${styles.container}`}>
           <div className={`${styles.containerLocation} d-flex flex-column`}>
@@ -44,7 +44,7 @@ export default function Index() {
             </div>
           </div>
           <div className={`${styles.ratingHost}`}>
-            <div>
+            <div className={`${styles.rating}`}>
               <Rating rating={location.rating} />
             </div>
             <div className={`${styles.host} d-flex align-items-center `}>

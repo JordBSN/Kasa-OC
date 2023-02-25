@@ -33,14 +33,13 @@
     right: 10px;
   }
 }
+
 .carouselImage {
   position: relative;
   object-fit: cover;
   width: 100%;
   height: 255px;
-
   @include mixin.sm-all {
     height: 415px;
   }
-
 }

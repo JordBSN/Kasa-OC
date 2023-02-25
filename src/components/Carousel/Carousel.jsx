@@ -1,16 +1,18 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import styles from "./carousel.module.scss";
 import arrowRight from "../../assets/images/arrowRight.svg";
 import arrowLeft from "../../assets/images/arrowLeft.svg";
+import BulletPoint from "./BulletPoint";
+
 export default function Carousel(props) {
   const pictures = props.pictures;
   const [current, setCurrent] = useState(0);
 
   function handleClickPrevious() {
-    setCurrent(current === pictures.length - 1 ? 0 : current + 1);
+    setCurrent(current === 0 ? pictures.length - 1 : current - 1);
   }
   function handleClickNext() {
-    setCurrent(current === 0 ? pictures.length - 1 : current - 1);
+    setCurrent(current === pictures.length - 1 ? 0 : current + 1);
   }
 
   function buttonLeft() {
@@ -22,7 +24,6 @@ export default function Carousel(props) {
       );
     }
   }
-
   function buttonRight() {
     if (pictures?.length > 1) {
       return (
@@ -35,17 +36,18 @@ export default function Carousel(props) {
 
   return (
     <>
-      <div className={`${styles.carousel}`}>
+      <div className={`${styles.carousel} w-100`}>
         {buttonRight()}
         {buttonLeft()}
         {pictures?.map(
           (picture, index) =>
             index === current && (
-              <img
-                className={`${styles.carouselImage} border-radius-10`}
-                key={index}
-                src={picture}
-              />
+              <div key={index}>
+                <img className={`${styles.carouselImage} border-radius-10`} src={picture} />
+                <div className={`d-flex flex-row justify-content-center mt-5`}>
+                  {pictures.length > 1 && pictures.map((picture, index) => <BulletPoint key={index} index={index} current={current} />)}
+                </div>
+              </div>
             )
         )}
       </div>

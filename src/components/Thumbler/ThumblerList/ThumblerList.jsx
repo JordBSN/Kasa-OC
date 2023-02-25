@@ -19,7 +19,7 @@ export default function ThumblerList() {
   return (
     <div className={styles.container}>
       {locations.map((location) => (
-        <div key={location.id}>
+        <div className={styles.card} key={location.id}>
           <Link to={`/logement/${location.id}`} relative="patch">
             <ThumblerListItem keys={location.id} location={location} />
           </Link>

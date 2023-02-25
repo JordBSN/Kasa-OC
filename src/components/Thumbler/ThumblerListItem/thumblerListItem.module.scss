@@ -1,4 +1,4 @@
-@use '../../../assets/styles/mixins' as mixin;
+@use "../../../assets/styles/mixins" as mixin;
 
 .card {
   position: relative;
@@ -22,7 +22,6 @@
     min-height: 340px;
     min-width: 340px;
   }
-
 }
 
 .title {
@@ -32,6 +31,9 @@
   left: 20px;
   bottom: 40px;
   font-size: 18px;
+  & :hover {
+    display: none;
+  }
   @include mixin.sm {
     font-size: 22px;
   }
@@ -41,6 +43,4 @@
   @include mixin.lg {
     font-size: 26px;
   }
-
-
 }

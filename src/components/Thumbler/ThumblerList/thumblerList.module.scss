@@ -1,4 +1,4 @@
-@use '../../../assets/styles/mixins' as mixin;
+@use "../../../assets/styles/mixins" as mixin;
 
 .container {
   display: grid;
@@ -9,10 +9,9 @@
   width: 100%;
 
   @include mixin.sm-all {
-    background-color: #F6F6F6;
+    background-color: #f6f6f6;
     padding: 20px;
     border-radius: 10px;
-
   }
 
   @include mixin.sm {
@@ -24,7 +23,12 @@
   @include mixin.lg {
     grid-template-columns: 1fr 1fr 1fr;
   }
-  @include mixin.xl{
+  @include mixin.xl {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
+}
+
+.card:hover {
+transform: translateY(-5px);
+  transition: all 0.1s ease-in-out;
 }

@@ -14,7 +14,7 @@ export default function Rating(props) {
         stars.push(<img src={star} alt="" className={`${styles.star} mr-2`} key={`start-` + i} />);
       }
     }
-    return <>{stars}</>;
+    return stars;
   }
 
   return <>{ShowRating()}</>;

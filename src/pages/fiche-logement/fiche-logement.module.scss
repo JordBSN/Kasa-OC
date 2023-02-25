@@ -11,7 +11,7 @@
 .containerLocation {
   min-width: 0;
   @include mixin.md-all {
-    min-width: 700px;
+    min-width: 600px;
   }
 }
 
@@ -63,6 +63,10 @@
     width: 64px;
     height: 64px;
   }
+}
+
+.rating {
+  min-width: 160px;
 }
 
 .ratingHost {
