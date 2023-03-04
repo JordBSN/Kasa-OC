@@ -2,7 +2,6 @@ import { useState } from "react";
 import styles from "./carousel.module.scss";
 import arrowRight from "../../assets/images/arrowRight.svg";
 import arrowLeft from "../../assets/images/arrowLeft.svg";
-import BulletPoint from "./BulletPoint";
 
 export default function Carousel(props) {
   const pictures = props.pictures;
@@ -11,6 +10,7 @@ export default function Carousel(props) {
   function handleClickPrevious() {
     setCurrent(current === 0 ? pictures.length - 1 : current - 1);
   }
+
   function handleClickNext() {
     setCurrent(current === pictures.length - 1 ? 0 : current + 1);
   }
@@ -24,6 +24,7 @@ export default function Carousel(props) {
       );
     }
   }
+
   function buttonRight() {
     if (pictures?.length > 1) {
       return (
@@ -33,11 +34,6 @@ export default function Carousel(props) {
       );
     }
   }
-
-  function handleChildClickSetCurrent(index) {
-    setCurrent(index);
-  }
-
   return (
     <>
       <div className={`${styles.carousel} w-100`}>
@@ -48,8 +44,8 @@ export default function Carousel(props) {
             index === current && (
               <div key={index}>
                 <img className={`${styles.carouselImage} border-radius-10`} src={picture} />
-                <div className={`d-flex flex-row justify-content-center mt-5`}>
-                  {pictures.length > 1 && pictures.map((picture, index) => <BulletPoint onClick={handleChildClickSetCurrent}  key={index} index={index} current={current} />)}
+                <div className={` ${styles.carouselNumber} text-white`}>
+                  {current + 1} / {pictures.length}
                 </div>
               </div>
             )
